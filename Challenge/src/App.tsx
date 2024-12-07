@@ -4,7 +4,7 @@ import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Resume from './components/Resume';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';  
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -18,6 +18,7 @@ const App: React.FC = () => {
         {/* Main content area */}
         <main className="container mt-4 flex-grow-1">
           <Routes>
+            <Route path="/" element={<Navigate to="/about" />} />
             <Route path="/about" element={<AboutMe />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
